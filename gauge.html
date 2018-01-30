@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="assets/gauge.css" type="text/css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Amaranth:400,700|Just+Another+Hand' rel='stylesheet' type='text/css'>
+  <script type="text/javascript" src="assets/gauge.js"></script>
+  <script type="text/javascript" src="assets/gauge.opts.js"></script>
+  <script type="text/javascript" src="event.ini.js"></script>
+</head>
+<body>
+	<div id="title-container">
+		<p id="title"></P>
+	</div>
+
+	<div id="gauge">
+		<canvas width=600 height=400 id="gauge-canvas"></canvas>
+		<div id="gauge-textfield"></div>
+	</div>
+	
+	<script type="text/javascript">
+	
+		document.getElementById('title').innerHTML = title;
+	
+		var canvas = document.getElementById('gauge-canvas');
+		var textfield = document.getElementById('gauge-textfield');
+		var gauge = new Gauge(canvas).setOptions(opts); 
+		var count = 0;
+		var min = 0;
+		gauge.maxValue = max; 
+		gauge.setMinValue(min);  
+		gauge.setTextField(textfield);
+		gauge.set(count);
+		
+		window.onkeydown  = function(e) {
+		   var key = e.keyCode ? e.keyCode : e.which;
+
+		   if (key == 38) {
+			if (count+1 <= max) { count += 1; }
+		   } else if (key == 40) {
+			   if (count-1 >= min) { count -= 1; }
+		   }
+		   
+		   gauge.set(count);
+		}
+	</script>
+	
+</body>
+</html>

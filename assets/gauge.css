@@ -1,0 +1,31 @@
+body {
+	width: 95%;
+	background-color: whitesmoke;
+}
+#gauge {
+  background: whitesmoke; position: relative;
+  width: 600px;
+  height: 600px;
+  margin: 25px 20px 20px 0;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  clear: both;
+  margin-left: auto;
+  margin-right: auto;
+}
+#gauge-canvas{
+  width: 600px; top: 100px;
+  position: relative;
+}
+#gauge-textfield{
+  position: absolute; top: 35px; left: 0; right: 0;
+  text-align: center; font-size: 4em; font-weight: bold;
+  color: black; font-family: 'Amaranth', sans-serif;
+}
+
+#title{
+	text-align: center; font-size: 4em; font-weight: bold;
+	color: black; font-family: 'Amaranth', sans-serif;
+	margin: 0;
+}
